@@ -1,1 +1,31 @@
+<link rel="stylesheet" href="style.css">
 
+<div class="nav">MOVIE STREAM</div>
+
+<div class="grid" id="movies"></div>
+
+<script>
+
+async function load(){
+
+const res = await fetch("http://localhost:5000/api/movie/all")
+const movies = await res.json()
+
+movies.forEach(m=>{
+moviesDiv.innerHTML += `
+<div class="card" onclick="watch('${m._id}')">
+<img src="${m.thumbnail}">
+<p>${m.title}</p>
+</div>
+`
+})
+
+}
+
+function watch(id){
+location="watch.html?id="+id
+}
+
+load()
+
+</script>
