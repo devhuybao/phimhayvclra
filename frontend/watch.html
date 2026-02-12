@@ -1,1 +1,26 @@
+<link rel="stylesheet" href="style.css">
 
+<div id="player"></div>
+
+<script>
+
+const id = new URLSearchParams(location.search).get("id")
+
+async function load(){
+
+const res = await fetch(
+"http://localhost:5000/api/movie/"+id
+)
+
+const m = await res.json()
+
+player.innerHTML = `
+<h2>${m.title}</h2>
+<video src="${m.videoUrl}" controls width="800"></video>
+`
+
+}
+
+load()
+
+</script>
