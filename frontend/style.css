@@ -1,1 +1,28 @@
+body {
+  background: #141414;
+  color: white;
+  font-family: Arial;
+}
 
+.nav {
+  background: black;
+  padding: 15px;
+  font-size: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 200px);
+  gap: 20px;
+  padding: 20px;
+}
+
+.card {
+  cursor: pointer;
+}
+
+.card img {
+  width: 200px;
+  height: 300px;
+  object-fit: cover;
+}
