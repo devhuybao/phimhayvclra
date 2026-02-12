@@ -1,1 +1,33 @@
+<h2>Admin Upload</h2>
 
+<input id="title" placeholder="title">
+<input id="thumbnail" placeholder="thumbnail url">
+<input id="video" placeholder="video url">
+
+<button onclick="add()">Upload</button>
+
+<script>
+async function add(){
+
+await fetch("http://localhost:5000/api/movie/add",{
+
+method:"POST",
+
+headers:{
+"Content-Type":"application/json"
+},
+
+body:JSON.stringify({
+
+title:title.value,
+thumbnail:thumbnail.value,
+videoUrl:video.value
+
+})
+
+})
+
+alert("uploaded")
+
+}
+</script>
